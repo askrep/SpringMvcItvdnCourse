@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HelloWorldController {
 
     @GetMapping(path = {"/", "/hello"})
-    public String getHelloWorld(Model model, @RequestParam(value = "name") String name) {
+    public String getHelloWorld(Model model, @RequestParam(value = "name",defaultValue = "null") String name) {
         model.addAttribute("name", name);
         return "hello";
     }
+
 }
