@@ -1,0 +1,10 @@
+PUT localhost:8080/books/create
+Content-Type: application/json
+
+{
+  "name": "Book Title 3",
+  "author": "AUTHOR 3"
+}
+
+###
+GET localhost:8080/books/numbers
