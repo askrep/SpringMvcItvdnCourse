@@ -1,9 +1,8 @@
 package ua.kas.lesson5validation.dto;
 
-import javax.validation.constraints.Null;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Email;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 public class PutUserRequest {
     @Null
@@ -14,8 +13,9 @@ public class PutUserRequest {
     private String login;
     @NotNull
     private String password;
-    @NotNull
+
     @Email
+    @NotNull
     private String email;
 
 

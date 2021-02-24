@@ -20,11 +20,10 @@ public class ValidationController {
     public UserDto getUserById(@RequestParam(value = "id") int id) {
         return userStorage.getUserById(id);
     }
-
+    @Validated
     @RequestMapping(path = "/user", method = RequestMethod.PUT)
-    public ResponseEntity putUser(@Validated @RequestBody PutUserRequest putUserRequest) {
+    public ResponseEntity putUser( @RequestBody @Validated PutUserRequest putUserRequest) {
         userStorage.putUser(putUserRequest);
         return new ResponseEntity(HttpStatus.OK);
-
     }
 }

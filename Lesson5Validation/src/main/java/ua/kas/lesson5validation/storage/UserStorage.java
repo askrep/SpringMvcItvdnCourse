@@ -4,13 +4,15 @@ import org.springframework.stereotype.Component;
 import ua.kas.lesson5validation.dto.PutUserRequest;
 import ua.kas.lesson5validation.dto.UserDto;
 
+import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class UserStorage {
-    private List<UserDto> userDtoList;
+    private List<UserDto> userDtoList = new ArrayList<>();
 
     public void putUser(PutUserRequest putUserRequest) {
-        long id = userDtoList.size() + 1;
+        long id = userDtoList.size() + 1L;
         userDtoList.add(new UserDto(id,
                 putUserRequest.getName(),
                 putUserRequest.getSurname(),
